@@ -43,13 +43,13 @@ nav ul li a:hover {
 
 /* Hero section */
 .hero {
-    background: url('path-to-your-image.jpg') no-repeat center center/cover; /* Ensure your image path is correct */
+    background: url('../images/hero-image.jpg') no-repeat center center/cover; /* Correct path for image */
     color: white;
     padding: 80px 0;
     text-align: center;
-    background-size: cover; /* Ensures image is responsive and covers the section */
+    background-size: cover;
     background-position: center;
-    height: 100vh; /* Full viewport height */
+    height: 100vh;
 }
 
 .hero h1 {
