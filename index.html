@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Nonprofit for Children - Coming Soon. Stay tuned for our launch!">
     <title>Coming Soon - Nonprofit for Children</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
@@ -16,14 +17,15 @@
         </header>
 
         <section class="image-section">
-            <img src="https://via.placeholder.com/600x400?text=Image+Placeholder" alt="Children development" class="main-image">
+            <img src="https://via.placeholder.com/600x400?text=Image+Placeholder" alt="Placeholder image for children's development" class="main-image">
         </section>
 
         <section class="subscription-form">
             <h2>Stay Updated!</h2>
             <p>Enter your email to be the first to know when we launch.</p>
             <form action="#" method="POST" class="email-form">
-                <input type="email" name="email" placeholder="Your email address" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Your email address" required aria-label="Email address">
                 <button type="submit">Subscribe</button>
             </form>
         </section>
@@ -32,5 +34,8 @@
             <p>&copy; 2025 Nonprofit for Children</p>
         </footer>
     </div>
+
+    <!-- Defer loading of non-essential scripts -->
+    <script defer src="script.js"></script>
 </body>
 </html>
