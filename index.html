@@ -25,23 +25,33 @@
             <img src="images/image-01.jpg" alt="Placeholder image for children's development" class="main-image">
         </section>
 
+        <!-- Add your form here for email subscription -->
+        <form id="subscriptionForm">
+            <input type="email" id="emailInput" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+        </form>
+
         <!-- Add your JavaScript here -->
         <script>
-        const email = 'test@example.com'; // Replace with actual email value
+        document.getElementById('subscriptionForm').addEventListener('submit', function(event) {
+            event.preventDefault();  // Prevent the form from reloading the page
 
-        fetch('https://your-new-api-id.execute-api.us-west-2.amazonaws.com/EmailSubscription', {  // Replace URL with the correct one
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ email: email })
-        })
-        .then(response => response.json())
-        .then(data => {
-            alert(data.message); // Display success message
-        })
-        .catch(error => {
-            alert('There was an error subscribing. Please try again later.');
+            const email = document.getElementById('emailInput').value;  // Get email from the input field
+
+            fetch('https://your-new-api-id.execute-api.us-west-2.amazonaws.com/EmailSubscription', {  // Replace with your API URL
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ email: email })
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert(data.message); // Display success message
+            })
+            .catch(error => {
+                alert('There was an error subscribing. Please try again later.');
+            });
         });
         </script>
     </div>
