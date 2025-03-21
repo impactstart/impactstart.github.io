@@ -1,23 +1,44 @@
-<script>
-document.getElementById('subscribeForm').addEventListener('submit', function(event) {
-  event.preventDefault();
-  
-  const email = document.getElementById('email').value;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Impact from the Start - Coming Soon. Stay tuned for our launch!">
+    <meta name="keywords" content="Impact, Start, Coming Soon, Launch">
+    <meta property="og:title" content="Coming Soon - Impact from the Start">
+    <meta property="og:description" content="Impact from the Start - Coming Soon. Stay tuned for our launch!">
+    <meta property="og:image" content="https://impactstart.github.io/images/og-image.jpg">
+    <meta property="og:url" content="https://impactstart.github.io">
+    <title>Coming Soon - Impact from the Start</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="title">Coming Soon</h1>
+            <p class="subheading">We are working on the website, so stay tuned!</p>
+        </header>
 
-  fetch('https://zh0zhjkuea.execute-api.us-east-2.amazonaws.com/EmailSubscription', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({ email: email })
-  })
-  .then(response => response.json())
-  .then(data => {
-    alert(data.message); // Display success message
-  })
-  .catch(error => {
-    console.error('Error:', error);
-    alert('There was an error subscribing. Please try again later.');
-  });
-});
-</script>
+        <section class="image-section">
+            <img src="images/image-01.jpg" alt="Placeholder image for children's development" class="main-image">
+        </section>
+
+        <section class="subscription-form">
+            <h2>Stay Updated!</h2>
+            <p>Enter your email to be the first to know when we launch.</p>
+            <form id="subscribeForm" action="https://zh0zhjkuea.execute-api.us-east-2.amazonaws.com/EmailSubscription" method="POST" class="email-form">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Your email address" required aria-label="Email address">
+                <button type="submit">Subscribe</button>
+            </form>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 Impact from Start</p>
+        </footer>
+    </div>
+</body>
+</html>
