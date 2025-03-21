@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const email = document.getElementById('email').value;
 
-        fetch('https://zh0zhjkuea.execute-api.us-east-2.amazonaws.com/EmailSubscription', {
+        fetch('https://zh0zhjkuea.execute-api.us-west-2.amazonaws.com/EmailSubscription', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
