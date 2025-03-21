@@ -14,13 +14,13 @@ document.getElementById('email-form').addEventListener('submit', function(event)
     }
 
     // Send the email to the API
-    fetch('https://tv7h471wj4.execute-api.us-west-1.amazonaws.com/EmailSubscription', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ email: email }) // Send the email as JSON
-    })
+    fetch('https://tv7h471wj4.execute-api.us-west-1.amazonaws.com/prod/EmailSubscription', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ email: email })
+})
     .then(response => response.json()) // Parse the response as JSON
     .then(data => {
         alert(data.message); // Show success or error message from the API
