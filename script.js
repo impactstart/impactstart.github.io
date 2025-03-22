@@ -5,7 +5,7 @@ form.addEventListener('submit', function(event) {
     const email = document.getElementById('email-input').value;
 
     // Send the email to AWS Lambda via API Gateway
-    fetch('https://xyz12345.execute-api.us-east-1.amazonaws.com/dev/subscribe', {  // Replace with your actual API Gateway URL
+    fetch('https://tv7h471wj4.execute-api.us-west-1.amazonaws.com/EmailSubscription', {  // Replace with your actual API Gateway URL
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
