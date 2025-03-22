@@ -1,4 +1,4 @@
-fetch('https://xyz12345.execute-api.us-west-1.amazonaws.com/dev/subscribe', {  // Correct URL for US West (N. California)
+fetch('https://ez2i005mr3.execute-api.us-west-1.amazonaws.com/dev', {  // Correct URL for US West (N. California)
     method: 'POST',
     headers: {
         'Content-Type': 'application/json'
