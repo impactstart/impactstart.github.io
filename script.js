@@ -1,4 +1,11 @@
-fetch('https://ez2i005mr3.execute-api.us-west-1.amazonaws.com/dev/subscribe', {
+// Proxy URL (for testing purposes only)
+const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+
+// Original API endpoint
+const apiUrl = 'https://ez2i005mr3.execute-api.us-west-1.amazonaws.com/dev/subscribe';
+
+// Modify fetch request to use the proxy
+fetch(proxyUrl + apiUrl, {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json'
