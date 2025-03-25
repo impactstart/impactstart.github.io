@@ -1,16 +1,9 @@
-// Proxy URL (for testing purposes only)
-const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
-
-// Original API endpoint
-const apiUrl = 'https://ez2i005mr3.execute-api.us-west-1.amazonaws.com/dev/subscribe';
-
-// Modify fetch request to use the proxy
-fetch(proxyUrl + apiUrl, {
+fetch('https://ez2i005mr3.execute-api.us-west-1.amazonaws.com/dev/subscribe', {
     method: 'POST',
     headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ email: document.getElementById('email').value })  // Ensure email input is retrieved correctly
+    body: JSON.stringify({ email: document.getElementById('email').value })  // Get email input value
 })
 .then(response => {
     if (!response.ok) {
@@ -20,7 +13,7 @@ fetch(proxyUrl + apiUrl, {
 })
 .then(data => {
     alert('Thank you for subscribing! Please check your inbox for a confirmation email.');
-    document.getElementById('form').reset();  // Ensure form is referenced correctly
+    document.getElementById('form').reset();  // Clear form
 })
 .catch(error => {
     console.error('Error:', error);
