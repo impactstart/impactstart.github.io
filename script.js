@@ -3,7 +3,7 @@ fetch('https://ez2i005mr3.execute-api.us-west-1.amazonaws.com/dev/subscribe', {
     headers: {
         'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ email: document.getElementById('email').value })  // Get email input value
+    body: JSON.stringify({ email: document.getElementById('email').value })  // Get the email input value
 })
 .then(response => {
     if (!response.ok) {
