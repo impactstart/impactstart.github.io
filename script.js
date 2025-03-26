@@ -1,16 +1,26 @@
 document.getElementById('subscription-form').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent default form submission
 
+    const emailInput = document.getElementById('email');
+    const email = emailInput.value;
+
+    if (!email) {
+        alert('Please enter an email address.');
+        return;
+    }
+
     fetch('https://ez2i005mr3.execute-api.us-west-1.amazonaws.com/dev/subscribe', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email: document.getElementById('email').value })
+        body: JSON.stringify({ email: email })
     })
     .then(response => {
         if (!response.ok) {
-            throw new Error('Network response was not ok');
+            return response.json().then(errorData => {
+                throw new Error(errorData.message || 'Network response was not ok');
+            });
         }
         return response.json();
     })
