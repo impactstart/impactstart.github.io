@@ -1,131 +1,68 @@
-/* Global Styles */
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4faff; /* Light Blue Background */
-    color: #333;
+    line-height: 1.6;
 }
 
 .container {
-    text-align: center;
+    width: 80%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
 }
 
-/* Header Section */
-header {
-    margin-top: 50px;
+.hero {
+    background-color: #f0f0f0; /* Light background */
+    text-align: center;
+    padding: 100px 20px;
 }
 
-h1.title {
-    font-family: 'Poppins', sans-serif;
-    font-size: 50px;
-    color: #4CAF50; /* Soft Green */
+.hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
 }
 
-.subheading {
-    font-size: 20px;
-    color: #555;
-    margin-top: 10px;
+.waitlist {
+    background-color: #e6f7ff; /* Light blue background */
+    padding: 50px 0;
 }
 
-/* Image Section */
-.image-section {
-    margin-top: 30px;
-}
-
-.main-image {
-    width: 100%;
-    max-width: 600px;
-    height: auto;
-    border-radius: 10px;
-}
-
-/* Subscription Form */
-.subscription-form {
-    margin-top: 50px;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.subscription-form h2 {
-    font-size: 24px;
-    color: #333;
-}
-
-.subscription-form p {
-    font-size: 18px;
-    margin: 10px 0;
-}
-
-.email-form {
-    margin-top: 20px;
-}
-
-.email-form input {
-    padding: 10px;
-    font-size: 16px;
-    width: 80%;
+.form-container {
     max-width: 400px;
-    margin-right: 10px;
-    border: 2px solid #ccc;
-    border-radius: 5px;
+    margin: 0 auto;
 }
 
-.email-form button {
+#subscription-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#subscription-form input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+}
+
+#subscription-form button {
     padding: 10px 20px;
-    font-size: 16px;
-    background-color: #FFD700; /* Soft Yellow */
-    color: #fff;
+    background-color: #007bff; /* Blue button */
+    color: white;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
 }
 
-.email-form button:hover {
-    background-color: #FFB700;
+.about-us {
+    padding: 50px 0;
 }
 
-/* Footer */
-footer {
-    margin-top: 40px;
-    font-size: 14px;
-    color: #777;
+.about-us h2 {
+    margin-bottom: 20px;
 }
 
-/* New Styles */
-form {
-  border: 4px solid #f1f1f1;
-}
-
-.container {
-  padding: 20px;
-  background-color: #f1f1f1;
-}
-
-input[type=text], input[type=submit] {
-  width: 100%;
-  padding: 12px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-}
-
-input[type=checkbox] {
-  margin-top: 16px;
-}
-
-input[type=submit] {
-  background-color: #04AA6D;
-  color: white;
-  border: none;
-}
-
-input[type=submit]:hover {
-  opacity: 0.8;
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
 }
