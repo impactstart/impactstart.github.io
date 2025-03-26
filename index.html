@@ -1,27 +1,46 @@
-<form id="form">
-    <input type="email" id="email" placeholder="Enter your email" required>
-    <button type="submit">Subscribe</button>
-</form>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Impact from the Start</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="hero">
+        <h1>Every child deserves a strong start in life.</h1>
+        <p>We're building a movement to ensure access to healthcare, caregiver support, and early childhood development resources—because a child’s future starts before birth.</p>
+    </header>
 
-<script>
-document.getElementById("form").addEventListener("submit", function(event) {
-    event.preventDefault(); // Prevent page reload
+    <section class="waitlist">
+        <div class="container">
+            <div class="form-container">
+                <h2>Stay Updated</h2>
+                <p>Be the first to know about our upcoming launch and opportunities to get involved.</p>
+                <form id="subscription-form">
+                    <input type="email" id="email" placeholder="Email Address" required>
+                    <button type="submit">Join Waitlist</button>
+                </form>
+            </div>
+        </div>
+    </section>
 
-    fetch('https://ez2i005mr3.execute-api.us-west-1.amazonaws.com/dev/subscribe', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ email: document.getElementById('email').value })
-    })
-    .then(response => response.json())
-    .then(data => {
-        alert('Thank you for subscribing! Please check your inbox for a confirmation email.');
-        document.getElementById('form').reset();
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        alert('Something went wrong. Please try again later.');
-    });
-});
-</script>
+    <section class="about-us">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>Impact from the Start is in the early stages of developing a nonprofit dedicated to supporting early childhood development. We focus on access to healthcare, maternal mental health resources, and caregiver education.</p>
+            <p>We believe that by ensuring children receive proper medical care and their caregivers are supported, we can foster healthier futures for entire families.</p>
+
+            <h2>Engagement & Feedback</h2>
+            <p>We’re looking for passionate individuals, families, and professionals to join our movement. Whether you’re a parent, educator, healthcare provider, or advocate, we want to hear from you. Share your ideas, get involved, and help us shape a future where every child has an equal opportunity to thrive. <b>Contact us to learn more or contribute to our growing initiative. 📩</b></p>
+
+            <h2>Transparency & Growth</h2>
+            <p>We’re a small, dedicated team working hard to bring this vision to life. As we grow, we appreciate your support, ideas, and patience. Your involvement will help us make a meaningful impact.</p>
+
+            <h2>Personal Connection</h2>
+            <p>Impact from the Start was created because I believe that early childhood development starts with proper healthcare and strong caregiver relationships. As someone passionate about children's well-being, I want to make sure families have the resources they need—starting before birth. This mission is deeply personal, and I’m committed to making change happen.</p>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
