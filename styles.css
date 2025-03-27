@@ -33,6 +33,15 @@ body {
     margin: 0 auto;
 }
 
+/* Brevo Iframe Styling */
+.form-container iframe {
+    width: 100%; /* Ensure the iframe fills the container's width */
+    max-width: 100%; /* Prevent the iframe from exceeding the container's width */
+    border: none; /* Remove any default iframe border */
+    margin: 0 auto; /* Center the iframe horizontally */
+    display: block; /* Make the iframe a block-level element */
+}
+
 #subscription-form {
     display: flex;
     flex-direction: column;
