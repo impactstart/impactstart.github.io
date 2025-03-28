@@ -40,9 +40,14 @@ body {
 
 .section {
     padding: 80px 20px; /* Increased top and bottom padding */
-    background-color: white;
+    background-color: white; /* Ensure white background for sections */
     margin-bottom: 20px;
     border-bottom: 1px solid #eee;
+    /* Add these lines to constrain text width */
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center; /* Center the text within the section */
 }
 
 .section:last-child {
