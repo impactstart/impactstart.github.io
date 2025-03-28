@@ -16,7 +16,12 @@
             <div class="form-container">
                 <h2>Stay Updated</h2>
                 <p>Be the first to know about our upcoming launch and opportunities to get involved.</p>
-                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe>
+                <form id="subscriptionForm">
+                    <label for="email">Enter your email address:</label>
+                    <input type="email" id="email" name="email" required>
+                    <button type="submit">Subscribe</button>
+                    <div id="subscriptionMessage"></div>
+                </form>
             </div>
         </div>
     </section>
@@ -38,5 +43,38 @@
         </div>
     </section>
 
+    <script>
+        document.getElementById('subscriptionForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            const emailInput = document.getElementById('email');
+            const email = emailInput.value;
+            const messageDiv = document.getElementById('subscriptionMessage');
+
+            // Basic client-side email validation (you might want a more robust solution)
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                messageDiv.textContent = 'Please enter a valid email address.';
+                return;
+            }
+
+            // Send an AJAX request to your backend
+            fetch('/api/subscribe', { // This is the endpoint your Node.js backend will handle
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email: email }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                messageDiv.textContent = data.message || 'Subscription successful! Please check your inbox for a welcome email.';
+                emailInput.value = ''; // Clear the input field
+            })
+            .catch(error => {
+                console.error('Error subscribing:', error);
+                messageDiv.textContent = 'An error occurred. Please try again later.';
+            });
+        });
+    </script>
 </body>
 </html>
