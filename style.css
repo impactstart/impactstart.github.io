@@ -7,7 +7,6 @@ body {
     line-height: 1.7;
 }
 
-/* Add this section for headings */
 h1, h2, h3 {
     font-family: 'Montserrat', sans-serif; /* Use Montserrat for headings */
     font-weight: bold; /* Keep the bold weight for headings */
@@ -43,7 +42,7 @@ h1, h2, h3 {
 .hero p {
     font-size: 1.3em;
     margin-bottom: 40px;
-    color: #eee;
+    color: #eee; /* Slightly lighter than white but more readable */
 }
 
 .section {
@@ -88,7 +87,7 @@ h1, h2, h3 {
 
 .section ul li:before {
     content: "•"; /* Use a bullet point */
-    color: #007bff; /* A blue accent color */
+    color: #a7bdd7; /* A softer blue accent color */
     position: absolute;
     left: 0;
 }
