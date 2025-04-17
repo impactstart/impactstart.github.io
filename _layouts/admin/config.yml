@@ -1,0 +1,36 @@
+backend:
+  name: git-gateway
+  branch: main # Make sure this is the correct name of your main branch on GitHub
+
+media_folder: "images" # Your images seem to be in the 'images' folder at the root
+public_folder: "/images"
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      - file: "index.html" # Your homepage seems to be index.html in the root
+        label: "Homepage"
+        name: "homepage"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+      # If you have other individual pages (like an About page), you can add them here.
+      # For example, if you had an about.html file in the root:
+      # - file: "about.html"
+      #   label: "About"
+      #   name: "about"
+      #   fields:
+      #     - { label: "Title", name: "title", widget: "string" }
+      #     - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "posts"
+    label: "Posts"
+    folder: "_posts" # I don't see this folder in your list. Do you have a blog?
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Tags", name: "tags", widget: "list" }
