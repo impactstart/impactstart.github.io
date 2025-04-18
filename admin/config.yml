@@ -1,28 +1,38 @@
 backend:
   name: git-gateway
-  branch: main # Or the name of your main branch on GitHub
+  branch: main # IMPORTANT: Make sure this matches your main branch on GitHub (usually 'main' or 'master')
 
-media_folder: "images" # Where your images will be stored
-public_folder: "/images" # The public path to your images
+media_folder: "images" # IMPORTANT: This should be the path where your images are stored in your repository
+public_folder: "/images" # IMPORTANT: This is the public path to your images on your website
 
 collections:
-  - name: "pages" # Used in routes, e.g., /admin/collections/pages
-    label: "Pages" # Used in the UI
+  - name: "pages" # Used internally and in the URL for this collection (e.g., /admin/collections/pages)
+    label: "Pages" # This is what you'll see in the CMS interface
     files:
-      - file: "index.html" # Your homepage is likely index.html
-        label: "Homepage"
-        name: "homepage"
-        fields:
+      - file: "index.html" # The path to your homepage file at the root of your repo
+        label: "Homepage" # What you'll see in the CMS for this specific file
+        name: "homepage" # Used internally
+        fields: # The fields (editable sections) for your homepage
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }
-  # Add other pages as needed
-  - name: "posts" # Used in routes, e.g., /admin/collections/posts
-    label: "Posts" # Used in the UI
-    folder: "_posts" # Adjust if your blog posts are in a different folder, or remove if you don't have a blog
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
+      # You can add more files here for other specific pages like an About page or Contact page
+      # - file: "about.html"
+      #   label: "About Page"
+      #   name: "about"
+      #   fields:
+      #     - { label: "Title", name: "title", widget: "string" }
+      #     - { label: "Content", name: "body", widget: "markdown" }
+
+  # Example collection for blog posts (adjust or remove if you don't have a blog)
+  - name: "posts" # Used internally and in the URL (e.g., /admin/collections/posts)
+    label: "Posts" # What you'll see in the CMS
+    folder: "_posts" # The folder where your blog post files are stored (adjust if yours is different)
+    create: true # Allows creating new blog posts from the CMS
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Defines the file name structure for new posts
+    fields: # The fields (editable sections) for your blog posts
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime" }
       - { label: "Body", name: "body", widget: "markdown" }
-      - { label: "Tags", name: "tags", widget: "list" }
+      - { label: "Tags", name: "tags", widget: "list" } # Example field for tags
+
+# You can add more collections here for other types of content (e.g., Portfolio items, Team members)
