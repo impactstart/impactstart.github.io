@@ -1,0 +1,28 @@
+backend:
+  name: git-gateway
+  branch: main # Or the name of your main branch on GitHub
+
+media_folder: "images" # Where your images will be stored
+public_folder: "/images" # The public path to your images
+
+collections:
+  - name: "pages" # Used in routes, e.g., /admin/collections/pages
+    label: "Pages" # Used in the UI
+    files:
+      - file: "index.html" # Your homepage is likely index.html
+        label: "Homepage"
+        name: "homepage"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+  # Add other pages as needed
+  - name: "posts" # Used in routes, e.g., /admin/collections/posts
+    label: "Posts" # Used in the UI
+    folder: "_posts" # Adjust if your blog posts are in a different folder, or remove if you don't have a blog
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Tags", name: "tags", widget: "list" }
